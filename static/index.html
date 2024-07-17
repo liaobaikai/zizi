@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="liaobaikai@dsgdata.com">
+    <title>Zizi</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.2-dist/css/bootstrap.min.css">
+
+    <style>
+        #nav .nav-item .nav-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        #nav .nav-item .nav-link span {
+            margin-left: 7px;
+        }
+
+        .form-group i {
+            color: red;
+            margin-right: 5px;
+        }
+
+        #service-pane button {
+            /* display: flexbox; */
+            /* align-items: center; */
+            /* margin: 0 5px; */
+        }
+
+        .tab-pane>div {
+            padding: 20px 30px;
+        }
+    </style>
+
+    
+
+
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+
+        <div class="row flex-xl-nowrap">
+            <div class="col-md-3 col-xl-2 bd-sidebar"
+                style="background-color: #f0f0f0; height: 100vh; position: sticky; top: 0;">
+
+                <div class="fs-2 mb-3 h4 fw-semibold" style="display: flex; align-items: center; margin: 25px 0;">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                        <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v2H0V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0ZM2 3.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm7.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0ZM9.5 3h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1ZM6 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm7 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm.5-1.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+                        <path d="M0 6h16v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V6Zm2 4.5a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Zm7 0a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                    </svg> -->
+                    <span style="margin-left: 5px;">DataXone管理助手</span>
+                </div>
+
+                <ul id="nav" class="nav flex-column bd-links nav-justified nav-pills">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="install-tab" type="button" data-toggle="tab"
+                            data-target="#install-pane" role="tab">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z" />
+                                <path
+                                    d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z" />
+                            </svg>
+                            <span>安装</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link " href="#" id="service-tab" data-toggle="tab"
+                            data-target="#service-pane">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
+                            </svg>
+                            <span>服务管理</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link disabled" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg>
+                            <span>修改数据库密码</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link disabled">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z" />
+                                <path
+                                    d="m2.125 8.567-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l-5.17-2.756z" />
+                            </svg>
+                            <span>升级版本</span>
+
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link disabled">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z" />
+                            </svg>
+                            <span>回退版本</span>
+
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link disabled">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-boombox-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            <span>卸载</span>
+
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <main class="col-md-9 col-xl-10 py-md-3 pl-md-5 pr-md-5 bd-content">
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="install-pane" role="tabpanel" aria-labelledby="install-tab">
+
+                        <form method="post" id="install-form">
+
+                            <div class="h4">基础配置</div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8">
+
+                                    <div class="form-group">
+                                        <label for="os_username"><i>*</i>系统用户名</label>
+                                        <input type="text" class="form-control" id="os_username"
+                                            aria-describedby="os_username_tips" name="os_username" value="dataxone" required>
+                                        <small id="os_username_tips"
+                                            class="form-text text-muted">DataXone管控台的节点系统用户名，默认为dataxone，不建议更改</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="os_user_passwd"><i>*</i>系统用户密码</label>
+                                        <input type="password" class="form-control" name="os_user_password" id="os_user_password"
+                                            aria-describedby="os_user_passwd_tips" required>
+                                        <small id="os_user_passwd_tips"
+                                            class="form-text text-muted">DataXone管控台的节点系统用户密码，需全部节点保持一致</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="os_java_home"><i>*</i>JAVA_HOME</label>
+                                        <input type="text" class="form-control" id="os_java_home"
+                                            aria-describedby="os_java_home_tips" name="os_java_home" value="/usr/openjdk/jdk8u322-b06" required>
+                                        <small id="os_java_home_tips"
+                                            class="form-text text-muted">JDK安装目录，支持openjdk 1.8 或oraclejdk 1.8 </small>
+                                        <!-- <small id="os_install_path_tips"
+                                            class="form-text text-muted">DataXone管控台安装路径，安装目录不能存在，默认为/data/dataxone</small> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="os_install_path"><i>*</i>DataXone安装路径</label>
+                                        <input type="text" class="form-control" id="os_install_path"
+                                            aria-describedby="os_install_path_tips" name="os_install_path" value="/data/dataxone" required>
+                                        <div class="alert alert-warning" role="alert" style="margin-top: 5px;">
+                                            DataXone管控台安装路径，安装目录不能存在，默认为/data/dataxone
+                                        </div>
+                                        <!-- <small id="os_install_path_tips"
+                                            class="form-text text-muted">DataXone管控台安装路径，安装目录不能存在，默认为/data/dataxone</small> -->
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dataxone_ha_domain"><i>*</i>管控台访问地址</label>
+
+                                        <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">http://</span>
+                                          </div>
+                                          <input type="text" class="form-control" id="dataxone_ha_domain"
+                                            aria-describedby="dataxone_ha_domain_tips" name="portal" required>
+                                          <div class="input-group-append">
+                                            <span class="input-group-text">:8080/DSGWEB</span>
+                                          </div>
+                                        </div>
+                                        
+                                        <small id="dataxone_ha_domain_tips"
+                                            class="form-text text-muted">部署完成后，使用该地址访问，高可用填写VIP或域名，单节点填写可本机IP</small>
+                                    </div>
+
+
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="enable_ha" checked="true" name="enable_ha">
+                                        <label class="form-check-label" for="enable_ha">平台是否需支持高可用功能</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="h4">端口配置</div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="os_install_port"><i>*</i>管控台端口号</label>
+                                        <input type="text" class="form-control" id="os_install_port"
+                                            aria-describedby="os_install_port_tips" name="port" pattern="[0-9]*" value="8080" required>
+                                        <small id="os_install_port_tips"
+                                            class="form-text text-muted">DataXone管控台tomcat端口，默认为8080，不建议修改</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="os_install_xone_port"><i>*</i>工作模块端口号</label>
+                                        <input type="text" class="form-control" id="os_install_xone_port"
+                                            aria-describedby="os_install_xone_port_tips" name="xone_port" pattern="[0-9]*" value="8081" required>
+                                        <small id="os_install_xone_port_tips"
+                                            class="form-text text-muted">DataXone工作模块tomcat端口，默认为8081，不建议修改</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="os_install_yxa_port"><i>*</i>数据库连接组件端口号</label>
+                                        <input type="text" class="form-control" id="os_install_yxa_port"
+                                            aria-describedby="os_install_yxa_port_tips" name="yxa_port" pattern="[0-9]*"  value="65534" required>
+                                        <small id="os_install_yxa_port_tips"
+                                            class="form-text text-muted">DataXone数据库连接组件端口号，默认为65534，不建议修改</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="os_install_reg_port"><i>*</i>许可注册组件端口号</label>
+                                        <input type="text" class="form-control" id="os_install_reg_port"
+                                            aria-describedby="os_install_reg_port_tips" name="reg_port" pattern="[0-9]*" value="6000" required>
+                                        <small id="os_install_reg_port_tips"
+                                            class="form-text text-muted">DataXone许可注册组件端口号，默认为6000，不建议修改</small>
+                                    </div>
+
+                                    <div id="os_install_mgr_port_input" class="form-group">
+                                        <label for="os_install_mgr_port"><i>*</i>高可用组件端口号</label>
+                                        <input type="text" class="form-control" id="os_install_mgr_port"
+                                            aria-describedby="os_install_mgr_port_tips" name="mgr_port" pattern="[0-9]*" value="9998">
+                                        <small id="os_install_mgr_port_tips"
+                                            class="form-text text-muted">DataXone管控台高可用组件端口号，默认为9998，不建议修改</small>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="ha-box">
+
+                                <div class="h4">高可用配置</div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-2"></div>
+                                    <div class="col-8">
+                                        
+                                        <div class="form-group">
+                                            <label for="dataxone_ha_node"><i>*</i>管控台节点IP列表</label>
+                                            <input type="text" class="form-control" id="dataxone_ha_node"
+                                                aria-describedby="dataxone_ha_node_tips" name="ha_node_list" pattern="(\\d{1,3}\\.){3}\\d{1,3},(\\d{1,3}\\.){3}\\d{1,3}">
+                                            <small id="dataxone_ha_node_tips"
+                                                class="form-text text-muted">配置Dataxone安装全部节点物理IP地址，配置格式为ip1,ip2</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="dataxone_ha_zk"><i>*</i>ZooKeeper集群信息</label>
+                                            <input type="text" class="form-control" id="dataxone_ha_zk"
+                                                aria-describedby="dataxone_ha_zk_tips" name="ha_zk_list" >
+                                            <small id="dataxone_ha_zk_tips"
+                                                class="form-text text-muted">配置zookeeper集群信息，配置格式为ip1:port,ip2:port,ip3:port</small>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="h4">配套数据库配置</div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="dataxone_db_host"><i>*</i>数据库主机</label>
+                                        <input type="text" class="form-control" id="dataxone_db_host"
+                                            aria-describedby="dataxone_db_host_tips" name="db_host" required>
+                                        <small id="dataxone_db_host_tips"
+                                            class="form-text text-muted">MySQL高可用填写VIP或域名，单节点填写可本机IP</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dataxone_db_user"><i>*</i>用户名</label>
+                                        <input type="text" class="form-control" id="dataxone_db_user" value="dataxone"
+                                            aria-describedby="dataxone_db_user_tips" name="db_user" required>
+                                        <small id="dataxone_db_user_tips"
+                                            class="form-text text-muted">MySQL数据库用户名，建议使用dataxone</small>
+                                        <!-- <button id="show-db-privileges" class="btn btn-primary" type="button"
+                                            data-bs-container="body" data-bs-toggle="popover"
+                                            data-bs-title="Popover title"
+                                            data-bs-content="create user dataxone@'%' identified with mysql_native_password by 'XXXXXX'; \ngrant all privileges on *.* to dataxone@'%'; \nflush privileges;">所需权限</button> -->
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dataxone_db_passwd"><i>*</i>用户密码</label>
+                                        <input type="password" class="form-control" id="dataxone_db_passwd"
+                                            aria-describedby="dataxone_db_passwd_tips" name="db_passwd" required>
+                                        <small id="dataxone_db_passwd_tips"
+                                            class="form-text text-muted">MySQL数据库用户密码</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dataxone_db_port"><i>*</i>端口</label>
+                                        <input type="text" class="form-control" id="dataxone_db_port" value="3306"
+                                            aria-describedby="dataxone_db_port_tips" pattern="[0-9]*" name="db_port">
+                                        <small id="dataxone_db_port_tips"
+                                            class="form-text text-muted">MySQL数据库访问端口</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8">
+                                    <button type="submit" id="install_init_btn" class="btn btn-primary">安装并初始化</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                    <div class="tab-pane " id="service-pane" role="tabpanel" aria-labelledby="service-tab">
+
+                        <div>
+
+                            <div class="h4">服务列表</div>
+                            <hr>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">服务</th>
+                                        <th scope="col">服务所在IP</th>
+                                        <th scope="col">安装目录</th>
+                                        <th scope="col">服务说明</th>
+                                        <th scope="col">监控</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>tomcat</td>
+                                        <td>/data/dataxone/tomcat</td>
+                                        <td>DataXone管控台主服务</td>
+                                        <td>192.168.1.100,192.168.1.101</td>
+                                        <td>
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-emoji-frown-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm-2.715 5.933a.5.5 0 0 1-.183-.683A4.498 4.498 0 0 1 8 9.5a4.5 4.5 0 0 1 3.898 2.25.5.5 0 0 1-.866.5A3.498 3.498 0 0 0 8 10.5a3.498 3.498 0 0 0-3.032 1.75.5.5 0 0 1-.683.183zM10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8z" />
+                                                </svg>
+                                            </span>
+
+                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                                                </svg></span>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z">
+                                                    </path>
+                                                    <path
+                                                        d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z">
+                                                    </path>
+                                                </svg>
+                                                <!-- <span>启动</span> -->
+                                            </button>
+                                            <button type="button" class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-stop-btn" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z">
+                                                    </path>
+                                                    <path
+                                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z">
+                                                    </path>
+                                                </svg>
+                                                <!-- <span>停止</span> -->
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>dataXoneTomcat</td>
+                                        <td>/data/dataxone/dataXoneTomcat</td>
+                                        <td>DataXone管控台工作服务</td>
+                                        <td>192.168.1.100</td>
+                                        <td>192.168.1.101</td>
+                                        <td>/</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                        33333333333333333333</div>
+                    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                        44444444444444444444444</div>
+                </div>
+
+            </main>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="./bootstrap-4.6.2-dist/js/jquery.slim.min.js"></script>
+    <script src="./bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./axios.min.js"></script>
+
+    <script>
+
+        // console.info($(".form-group input:not[required]"));
+        // $(".form-group input:not[required]").each(() => {
+        //     console.info($(this).siblings("label"))
+        // })
+
+        let habox = $("#ha-box");
+        let mgrbox = $("#os_install_mgr_port_input");
+        // let dataxone_ha_node = $("#dataxone_ha_node");
+        // let dataxone_ha_zk = $("#dataxone_ha_zk");
+        let show = () => {
+            habox.show();
+            mgrbox.show();
+        }
+
+        let hide = () => {
+            habox.hide();
+            mgrbox.hide();
+        }
+
+        $("#enable_ha").is(":checked") ? show(): hide();
+        $("#enable_ha").change(() => {
+            habox.is(":hidden") ? show() : hide();
+        });
+
+
+        $('#install-form').submit((e) => {
+            e.preventDefault();
+            // let data = $("#install-form").serialize();
+            // console.info(data);
+            axios.post('http://localhost:8765/app/install', $('#install-form').serialize())
+                .then(response => response.json())
+                .then(data => {
+                    console.info("data: " + data);
+                })
+                .catch(error => console.error('Error:', error));
+
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

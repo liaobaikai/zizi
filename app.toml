@@ -1,0 +1,14 @@
+
+
+
+
+[[CustomVariable]]
+name="cmc.type"
+disabled=false
+max=100
+pattern=""
+placeholder=""
+readonly=false
+type="text"
+value="abc"
+
